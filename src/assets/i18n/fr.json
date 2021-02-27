@@ -1,0 +1,18 @@
+{
+  "localization": {
+    "language": "Langue",
+    "english":"Anglaise",
+    "french":"Français"
+  },
+  "create-form": {
+    "header": "Créer un contribuable",
+    "name": "Nom",
+    "address": "Adresse",
+    "percent": "Pour cent",
+    "payment_sum": "Montant du paiement",
+    "phone_number": "Numéro de téléphone",
+    "send": "Envoyer",
+    "message-send-success": "Message envoyé",
+    "message-send-error": "Impossible d'envoyer le message"
+  }
+}

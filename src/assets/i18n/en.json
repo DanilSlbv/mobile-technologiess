@@ -1,0 +1,18 @@
+{
+  "localization": {
+    "language": "Language",
+    "english":"English",
+    "french":"French"
+  },
+  "create-form": {
+    "header": "Create taxpayer",
+    "name": "Name",
+    "address": "Address",
+    "percent": "Percent",
+    "payment_sum": "Payment sum",
+    "phone_number": "Phone number",
+    "send": "Send",
+    "message-send-success": "Message sended",
+    "message-send-error": "Can not send message"
+  }
+}

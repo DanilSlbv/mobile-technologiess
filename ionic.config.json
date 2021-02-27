@@ -1,5 +1,7 @@
 {
   "name": "mobile-technologies",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
