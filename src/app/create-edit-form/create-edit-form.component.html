@@ -22,11 +22,11 @@
         </div>
         <div class="input-item">
             <ion-label>{{'create-form.phone_number' | translate}}</ion-label>
-            <ion-intl-tel-input formControlName="phoneNumber">
-            </ion-intl-tel-input>
+            <ion-input formControlName="phoneNumber"></ion-input>
         </div>
         <div class="button-wrapper">
-            <button (click)="checkPermission()">{{'create-form.send' | translate}}</button>
+            <button (click)="checkPermission()">{{'create-form.send' |
+                translate}}</button>
         </div>
     </form>
 </ion-content>

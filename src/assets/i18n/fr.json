@@ -15,6 +15,7 @@
     "message-send-success": "Message envoyé",
     "message-send-error": "Impossible d'envoyer le message",
     "message-remove-success": "Le message a été supprimé",
-    "message-remove-error": "Impossible de supprimer le message"
+    "message-remove-error": "Impossible de supprimer le message",
+    "phone-required": "Le numéro de téléphone est requis"
   }
 }

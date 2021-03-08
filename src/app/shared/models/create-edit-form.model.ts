@@ -3,4 +3,5 @@ export class CreateEditFormModel {
     address: string;
     percent: number;
     paymentSum: number;
+    phoneNumber: string;
 };

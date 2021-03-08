@@ -5,5 +5,4 @@ export class MessageFileModel {
     public infoObject: CreateEditFormModel;
     public creationDate: Date;
     public messageText: string;
-    public phoneNmber: string;
 }

@@ -1,7 +1,7 @@
 <ion-button (click)="loadMessages()">Load</ion-button>
 <div class="sended-container">
   <ion-card *ngFor="let message of allMessages" (click)="editMessage(message.fileName)">
-    <ion-card-header>{{message.phoneNmber}}</ion-card-header>
+    <ion-card-header>{{message.infoObject.phoneNumber}}</ion-card-header>
     <ion-card-content>
       {{message.messageText}}
     </ion-card-content>

@@ -15,6 +15,7 @@
     "message-send-success": "Message sended",
     "message-send-error": "Can not send message",
     "message-remove-success": "Message has been removed",
-    "message-remove-error": "Can not remove message"
+    "message-remove-error": "Can not remove message",
+    "phone-required": "Phone number is required"
   }
 }

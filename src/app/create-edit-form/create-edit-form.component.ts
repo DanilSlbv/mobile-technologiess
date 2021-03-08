@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SMS } from '@ionic-native/sms/ngx';
 import { CreateEditFormModel } from '../shared/models/create-edit-form.model';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
@@ -17,7 +17,7 @@ import { FileService } from '../services/file.service';
 export class CreateFormComponent implements OnInit {
 
   private _messageFileName: string = "";
-  
+
   public createEditForm: FormGroup
 
   public get isCanRemoveMessage(): boolean {
@@ -80,19 +80,26 @@ export class CreateFormComponent implements OnInit {
       name: this.createEditForm.controls.name.value,
       address: this.createEditForm.controls.address.value,
       percent: this.createEditForm.controls.percent.value,
-      paymentSum: this.createEditForm.controls.paymentSum.value
+      paymentSum: this.createEditForm.controls.paymentSum.value,
+      phoneNumber: this.createEditForm.controls.phoneNumber.value
     };
+    if (!createFormObject.phoneNumber) {
+      this.showNotification('create-form.phone-required', false);
+      return;
+    }
     let message = this.getMessageText(createFormObject);
 
-    this.sms.send(this.createEditForm.controls.phoneNumber.value.internationalNumber, message, {
+    this.sms.send(createFormObject.phoneNumber, message, {
       replaceLineBreaks: true
     }).then(() => {
       let messageFileModel: MessageFileModel = {
         infoObject: createFormObject,
         creationDate: new Date,
         messageText: message,
-        phoneNmber: this.createEditForm.controls.phoneNumber.value.internationalNumber
       };
+      if (this._messageFileName) {
+        this._messageFileName = "";
+      }
       this.createEditForm.reset();
       this.checkDirAndSave(JSON.stringify(messageFileModel));
       this.showNotification(this.translateService.instant('create-form.message-send-success'), true);
@@ -137,13 +144,12 @@ export class CreateFormComponent implements OnInit {
   }
 
   private initiateForm(messageFileModel?: MessageFileModel): void {
-    let pn = '+380 668386892'
     this.createEditForm = new FormGroup({
       name: new FormControl(messageFileModel ? messageFileModel.infoObject.name : ""),
       address: new FormControl(messageFileModel ? messageFileModel.infoObject.address : ""),
       percent: new FormControl(messageFileModel ? messageFileModel.infoObject.percent : ""),
       paymentSum: new FormControl(messageFileModel ? messageFileModel.infoObject.paymentSum : ""),
-      phoneNumber: new FormControl({ value: pn })
+      phoneNumber: new FormControl(messageFileModel ? messageFileModel.infoObject.phoneNumber : "")
     });
   }
 

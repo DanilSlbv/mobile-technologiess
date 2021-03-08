@@ -9,7 +9,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CreateFormComponent } from './create-edit-form/create-edit-form.component';
-import { IonIntlTelInputModule } from 'ion-intl-tel-input';
 import { SMS } from '@ionic-native/sms/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -32,7 +31,6 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     HttpClientModule,
     ReactiveFormsModule,
-    IonIntlTelInputModule,
     FormsModule,
     BrowserModule,
     IonicModule.forRoot(),
