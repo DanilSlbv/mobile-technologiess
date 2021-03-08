@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserDataModel } from './shared/models/userData.model';
 
 const maxRColorValue = 255;
 const maxGColorValue = 50;
@@ -12,19 +13,37 @@ const maxBColorValue = 140;
 
 export class AppComponent {
 
-  public iconColor: string = "#000000";
-  public likesCount: number = 0;
+  public usersData: Array<UserDataModel> = [
+    {
+      'name': 'Grace',
+      'lastName': 'Hopper',
+      'likesCount': 0,
+      'heartColor': "#000000"
+    },
+    {
+      'name': 'Dunder',
+      'lastName': 'Mifflin',
+      'likesCount': 0,
+      'heartColor': "#000000"
+    },
+    {
+      'name': 'Jenna',
+      'lastName': 'Fisher',
+      'likesCount': 0,
+      'heartColor': "#000000"
+    }
+  ]
 
   constructor(
   ) {
   }
 
-  public onLikeClicked(): void {
-    this.likesCount += 1;
+  public onLikeClicked(index: number): void {
+    this.usersData[index].likesCount += 1;
 
-    let rColorValue = this.likesCount * 10;
-    let gColorValue = this.likesCount * 1;
-    let bColorValue = this.likesCount * 5;
+    let rColorValue = this.usersData[index].likesCount * 10;
+    let gColorValue = this.usersData[index].likesCount * 1;
+    let bColorValue = this.usersData[index].likesCount * 5;
     if (rColorValue > maxRColorValue) {
       rColorValue = maxRColorValue
     }
@@ -34,7 +53,7 @@ export class AppComponent {
     if (bColorValue > maxBColorValue) {
       bColorValue = maxBColorValue
     }
-    this.iconColor = `rgba(${rColorValue},${gColorValue},${bColorValue},1)`
+    this.usersData[index].heartColor = `rgba(${rColorValue},${gColorValue},${bColorValue},1)`
   }
 
 }
