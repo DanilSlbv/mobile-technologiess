@@ -1,8 +1,9 @@
+<ion-button *ngIf="isCanRemoveMessage" [color]="'danger'" (click)="removeMessage()">REMOVE</ion-button>
 <ion-content>
     <div class="form-title">
         {{'create-form.header' | translate}}
     </div>
-    <form [formGroup]="createForm">
+    <form [formGroup]="createEditForm">
         <div class="input-item">
             <ion-label>{{'create-form.name' | translate}}</ion-label>
             <ion-input type="text" formControlName="name"></ion-input>

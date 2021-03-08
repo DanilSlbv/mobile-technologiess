@@ -1,8 +1,8 @@
 {
   "localization": {
     "language": "Language",
-    "english":"English",
-    "french":"French"
+    "english": "English",
+    "french": "French"
   },
   "create-form": {
     "header": "Create taxpayer",
@@ -13,6 +13,8 @@
     "phone_number": "Phone number",
     "send": "Send",
     "message-send-success": "Message sended",
-    "message-send-error": "Can not send message"
+    "message-send-error": "Can not send message",
+    "message-remove-success": "Message has been removed",
+    "message-remove-error": "Can not remove message"
   }
 }

@@ -8,6 +8,19 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class AppComponent {
+
+  public navigate =
+    [
+      {
+        title: "All",
+        url: "/"
+      },
+      {
+        title: "Create",
+        url: "/create"
+      }
+    ]
+
   constructor(
     private translate: TranslateService
   ) {

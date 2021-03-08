@@ -8,12 +8,14 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { CreateFormComponent } from './create-form/create-form.component';
+import { CreateFormComponent } from './create-edit-form/create-edit-form.component';
 import { IonIntlTelInputModule } from 'ion-intl-tel-input';
 import { SMS } from '@ionic-native/sms/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { LocalizationComponent } from './shared/components/localization/localization.component';
+import { File } from '@ionic-native/file/ngx';
+import { MessagesListComponent } from './messages-list/messages-list.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -23,7 +25,8 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     CreateFormComponent,
-    LocalizationComponent
+    LocalizationComponent,
+    MessagesListComponent
   ],
   entryComponents: [],
   imports: [
@@ -44,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   providers: [
     SMS,
+    File,
     AndroidPermissions,
     {
       provide: RouteReuseStrategy,
