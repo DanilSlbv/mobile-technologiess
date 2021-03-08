@@ -15,6 +15,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { LocalizationComponent } from './shared/components/localization/localization.component';
 import { File } from '@ionic-native/file/ngx';
 import { MessagesListComponent } from './messages-list/messages-list.component';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -46,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [
     SMS,
     File,
+    ScreenOrientation,
     AndroidPermissions,
     {
       provide: RouteReuseStrategy,

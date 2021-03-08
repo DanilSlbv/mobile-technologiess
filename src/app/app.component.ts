@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
   selector: 'app-root',
@@ -22,12 +23,19 @@ export class AppComponent {
     ]
 
   constructor(
-    private translate: TranslateService
+    private translate: TranslateService,
+    private screenOrientation: ScreenOrientation
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
     this.translate.setDefaultLang('en');
+    this.screenOrientation.unlock();
+    this.screenOrientation.onChange().subscribe(
+      () => {
+        console.log("Orientation Changed");
+      }
+    );
   }
 }
