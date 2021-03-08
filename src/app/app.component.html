@@ -1,52 +1,36 @@
 <ion-app>
-    <div class="header">
-        <div>Daniil Slabov</div>
-        <div>Kholosha Oleg</div>
-    </div>
     <div class="content">
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <div class="widget-container">
-                        <div class="title">DISLIKE/LIKE #1</div>
-                        <div class="image-container">
-                            <img class="rotate" [ngClass]="{'default':toogleValue1}" src="../assets/img/like.png">
-                        </div>
-                        <ion-item [color]="'#deeaf6'">
-                            <ion-label>{{toogleValue1?'Like':'Dislike'}}</ion-label>
-                            <ion-toggle [(ngModel)]="toogleValue1"></ion-toggle>
-                        </ion-item>
-                    </div>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <div class="widget-container">
-                        <div class="title">LOADER #2</div>
-                        <div class="image-container">
-                            <img [ngClass]="{'loading':toogleValue2}" src="../assets/img/loading.png">
-                        </div>
-                        <ion-item [color]="'#deeaf6'">
-                            <ion-label>{{toogleValue2?'Started':'Stopped'}}</ion-label>
-                            <ion-toggle [(ngModel)]="toogleValue2"></ion-toggle>
-                        </ion-item>
-                    </div>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <div class="widget-container">
-                        <div class="title">SHOW/HIDE #3</div>
-                        <div class="image-container">
-                            <img class="zoomInLeft" [ngClass]="{'active':toogleValue3}" src="../assets/img/show.png">
-                        </div>
-                        <ion-item [color]="'#deeaf6'">
-                            <ion-label>{{toogleValue3?'Hide':'Show'}}</ion-label>
-                            <ion-toggle [(ngModel)]="toogleValue3"></ion-toggle>
-                        </ion-item>
-                    </div>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+        <div class="card-item">
+            <div class="user-info-wrapper">
+                <div class="value-content">
+                    <label>Name</label>
+                    <div class="value">Grace</div>
+                </div>
+                <div class="value-content">
+                    <label>Last name</label>
+                    <div class="value">Hopper</div>
+                </div>
+            </div>
+            <div class="like-wrapper">
+                <svg [attr.fill]="iconColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                    style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+                    c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+                    c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+                    s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+                    C512,93.417,453.532,30,376,30z" />
+                        </g>
+                    </g>
+                </svg>
+                <div class="value-content">
+                    <label>Like</label>
+                    <div class="value">{{likesCount}}</div>
+                </div>
+                <ion-button (click)="onLikeClicked()">Like</ion-button>
+            </div>
+        </div>
     </div>
 </ion-app>
