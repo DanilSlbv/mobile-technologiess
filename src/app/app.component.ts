@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,25 +8,12 @@ import { TranslateService } from '@ngx-translate/core';
 
 export class AppComponent {
 
-  public navigate =
-    [
-      {
-        title: "All",
-        url: "/"
-      },
-      {
-        title: "Create",
-        url: "/create"
-      }
-    ]
+  public toogleValue1: boolean = false;
+  public toogleValue2: boolean = false;
+  public toogleValue3: boolean = false;
 
   constructor(
-    private translate: TranslateService
   ) {
-    this.initializeApp();
   }
 
-  initializeApp() {
-    this.translate.setDefaultLang('en');
-  }
 }

@@ -1,17 +1,52 @@
 <ion-app>
-  <app-localization></app-localization>
-  <ion-menu side="start" menuId="first" contentId="content1">
-    <ion-content>
-      <ion-list *ngFor="let pages of navigate">
-        <ion-menu-toggle auto-hide="true">
-          <ion-item [routerLink]="pages.url" routerDirection="forward">
-            {{pages.title}}
-          </ion-item>
-        </ion-menu-toggle>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  <div class="main-content">
-    <ion-router-outlet id="content1"></ion-router-outlet>
-  </div>
+    <div class="header">
+        <div>Daniil Slabov</div>
+        <div>Kholosha Oleg</div>
+    </div>
+    <div class="content">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div class="widget-container">
+                        <div class="title">DISLIKE/LIKE #1</div>
+                        <div class="image-container">
+                            <img class="rotate" [ngClass]="{'default':toogleValue1}" src="../assets/img/like.png">
+                        </div>
+                        <ion-item [color]="'#deeaf6'">
+                            <ion-label>{{toogleValue1?'Like':'Dislike'}}</ion-label>
+                            <ion-toggle [(ngModel)]="toogleValue1"></ion-toggle>
+                        </ion-item>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <div class="widget-container">
+                        <div class="title">LOADER #2</div>
+                        <div class="image-container">
+                            <img [ngClass]="{'loading':toogleValue2}" src="../assets/img/loading.png">
+                        </div>
+                        <ion-item [color]="'#deeaf6'">
+                            <ion-label>{{toogleValue2?'Started':'Stopped'}}</ion-label>
+                            <ion-toggle [(ngModel)]="toogleValue2"></ion-toggle>
+                        </ion-item>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <div class="widget-container">
+                        <div class="title">SHOW/HIDE #3</div>
+                        <div class="image-container">
+                            <img class="zoomInLeft" [ngClass]="{'active':toogleValue3}" src="../assets/img/show.png">
+                        </div>
+                        <ion-item [color]="'#deeaf6'">
+                            <ion-label>{{toogleValue3?'Hide':'Show'}}</ion-label>
+                            <ion-toggle [(ngModel)]="toogleValue3"></ion-toggle>
+                        </ion-item>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
 </ion-app>
